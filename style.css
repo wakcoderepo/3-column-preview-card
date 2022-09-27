@@ -1,0 +1,193 @@
+:root {
+  /* card 1 */
+  --clr-orange: hsl(31, 77%, 52%);
+  /* card 2 */
+  --clr-cyan: hsl(184, 100%, 22%);
+  /* card 3 */
+  --clr-cyan-drk: hsl(179, 100%, 13%);
+  /* main bg, h1 font, button border/text active state */
+  --clr-gray-lts: hsl(0, 0%, 95%);
+  /* card paragraph */
+  --clr-white-trans: hsla(0, 0%, 100%, 0.75);
+  /* any text besides headings */
+  --fs-base: 1.5rem;
+  /* heading  */
+  --fs-h1: 4rem;
+  /* paragraph, button text */
+  --ff-base: "Lexend Deca", sans-serif;
+  /* heading */
+  --ff-alt: "Big Shoulders Display", sans-serif;
+}
+
+/* start of CSS resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: var(--fs-base);
+  font-family: var(--ff-base);
+  color: var(--clr-white-trans);
+  /* per accessibility guidance */
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* end of CSS reset */
+
+/* start of main section */
+main {
+  min-height: 100vh;
+  background-color: var(--clr-gray-lts);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 30.7rem;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4.8rem;
+}
+
+.card:nth-of-type(1) {
+  background-color: var(--clr-orange);
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.card:nth-of-type(2) {
+  background-color: var(--clr-cyan);
+}
+
+.card:nth-of-type(3) {
+  background-color: var(--clr-cyan-drk);
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+h1 {
+  color: var(--clr-gray-lts);
+  font-family: var(--ff-alt);
+  font-size: var(--fs-h1);
+  text-transform: uppercase;
+}
+
+.desc {
+  margin-right: .2rem;
+}
+
+button {
+  margin-top: 6rem;
+  width: 14.6rem;
+  height: 4.8rem;
+  border-radius: 50rem;
+  border: none;
+  background-color: var(--clr-gray-lts);
+}
+
+.card:nth-of-type(1)>button {
+  color: var(--clr-orange);
+}
+
+.card:nth-of-type(2)>button {
+  color: var(--clr-cyan);
+}
+
+.card:nth-of-type(3)>button {
+  color: var(--clr-cyan-drk);
+}
+
+@media (hover: hover) {
+  button:hover {
+    cursor: pointer;
+    border: 2px solid var(--clr-gray-lts);
+  }
+
+  .card:nth-of-type(1)>button:hover {
+    background-color: var(--clr-orange);
+    color: var(--clr-gray-lts);
+  }
+
+  .card:nth-of-type(2)>button:hover {
+    background-color: var(--clr-cyan);
+    color: var(--clr-gray-lts);
+  }
+
+  .card:nth-of-type(3)>button:hover {
+    background-color: var(--clr-cyan-drk);
+    color: var(--clr-gray-lts);
+  }
+}
+
+/* end of main section */
+
+@media only screen and (max-width: 900px) {
+  main {
+    flex-direction: column;
+    width: 100%;
+    padding: 8.8rem 0;
+  }
+
+  .card {
+    height: 44.2rem;
+  }
+
+  .card:nth-of-type(1) {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 1rem;
+  }
+
+  .card:nth-of-type(3) {
+    background-color: var(--clr-cyan-drk);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  button {
+    margin-top: 0;
+  }
+}
